@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Satisfy&family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet" />
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+
+   <link rel="stylesheet" href="fullscreen.css">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="ab.css">
+  <link rel="stylesheet" href="age.css">
+  <link rel="stylesheet" href="first.css">
+  <link rel="stylesheet" href="type.css">  
+  <link rel="stylesheet" href="game.css"> 
+  <link rel="stylesheet" href="heart.css">   
+  <link rel="stylesheet" href="ii.css">  
+  <link rel="stylesheet" href="night.css">  
+    
+ 
+ 
+  <title>Beastie!</title>
+  <style>
+
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+   }
+   
+
+      body{
+	  
+	   text-align:center;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+	  }
+/* Full-screen overlay: now black background */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background: #000;           /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Dot-bounce loader: size adjustable via --loader-size */
+:root {
+  --loader-size: 40px;        /* Change this for bigger/smaller */
+}
+
+.loader {
+  display: inline-flex;
+  gap: calc(var(--loader-size) * 0.25);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: var(--loader-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    linear-gradient(#222 0 0) top/100% 40% no-repeat,
+    radial-gradient(farthest-side,#000 95%,#0000) 50%/10% 10% no-repeat #fff;
+  animation: l7 1.5s infinite alternate ease-in;
+}
+@keyframes l7 {
+  0%, 70%   { background-size:100% 40%,10% 10% }
+  85%       { background-size:100% 120%,10% 10% }
+  100%      { background-size:100% 40%,10% 10% }
+}
+ 
+	.z, .a, .b, .c, .d, .e, .f, .g {
+      display: none;
+	  
+	  }
+ .active {
+      display: block;
+    }
+   button {
+    
+    
+     
+	
+	gap: 5px;
+    font-size: 1.1rem;
+   
+    cursor: pointer;
+    
+}
+
+ .animated-button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: linear-gradient(-30deg, rgb(255 5 5 / 76%) 50%, #ff217d 50%);
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #f7d4d4;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: -1px 2px 3px 3px rgb(194 247 106);
+    }
+
+    .animated-button::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #ad8585;
+      opacity: 0;
+      transition: .2s opacity ease-in-out;
+    }
+    .animated-button:hover::before { opacity: 0.2; }
+
+    .animated-button span { position: absolute; }
+
+    /* Top */
+    .animated-button span:nth-child(1) { top:0; left:0; width:100%; height:2px;
+      background: linear-gradient(to left, rgba(43,8,8,0), #00008B);
+      animation: animateTop 2s linear infinite;
+    }
+    @keyframes animateTop {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Right */
+    .animated-button span:nth-child(2) { top:0; right:0; width:2px; height:100%;
+      background: linear-gradient(to top, rgba(43,8,8,0), #00008B);
+      animation: animateRight 2s linear -1s infinite;
+    }
+    @keyframes animateRight {
+      0%   { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
+    }
+
+    /* Bottom */
+    .animated-button span:nth-child(3) { bottom:0; left:0; width:100%; height:2px;
+      background: linear-gradient(to right, rgba(43,8,8,0), #00008B);
+      animation: animateBottom 2s linear infinite;
+    }
+    @keyframes animateBottom {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Left */
+    .animated-button span:nth-child(4) { top:0; left:0; width:2px; height:100%;
+      background: linear-gradient(to bottom, rgba(43,8,8,0), #00008B);
+      animation: animateLeft 2s linear -1s infinite;
+    }
+    @keyframes animateLeft {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+   
+     .no-animate {
+           cursor: pointer;
+	 }
+	 #musicIcon {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+
+  animation: rotate 4s linear infinite, bgMove 15s ease infinite;
+  animation-play-state: paused, running; /* rotate paused by default, bg runs */
+
+  background: linear-gradient(270deg, #ff3b3f, #0088ff, #00ffb3, #ffbf00);
+  background-size: 800% 800%; /* Yeh line important hai */
+  transition: background 1s ease;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+#musicPopup {
+  position: fixed;
+  top: 60px;
+  
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none;
+  animation: popupFade 0.5s ease;
+}
+
+.popup-box {
+  
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.popup-box .arrow {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(255,255,255,0.95);
+}
+.popup-box .dd {
+  position: absolute;
+  top: -10px;
+  Left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(255,255,255,0.95);
+}
+#musicPopup button {
+  margin-top: 12px;
+  padding: 6px 16px;
+  border: none;
+  background-color: #ff3b3f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes popupFade {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+</style>
+<body class="fullscreen-active">
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll("button").forEach(btn => {
+    // Skip buttons with .no-animate OR data-no-animate
+    if (btn.classList.contains("no-animate")) return;
+    if (btn.hasAttribute('data-no-animate')) return;
+
+    // Otherwise add animation class + spans
+    if (!btn.classList.contains("animated-button")) {
+      btn.classList.add("animated-button");
+      const spans = btn.querySelectorAll("span");
+      if (spans.length < 4) {
+        for (let i = 0; i < 4; i++) {
+          btn.appendChild(document.createElement("span"));
+        }
+      }
+    }
+  });
+});
+</script>
+
+<div id="page-loader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- 2) Fullscreen Overlay -->
+  <div id="overlay">
+    <button id="fullscreenBtn" data-no-animate onclick="enterFullscreen()"  title="Enter Fullscreen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <!-- Expand corners -->
+        <polyline points="4 10 4 4 10 4"></polyline>
+        <polyline points="14 4 20 4 20 10"></polyline>
+        <polyline points="4 14 4 20 10 20"></polyline>
+        <polyline points="14 20 20 20 20 14"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 3) Music Guide Popup -->
+  <div id="musicPopup">
+   
+    <div class="popup-box">
+      <div class="arrow"></div>
+	  <div class="dd"></div>
+	  <h3> ✅Buttons Guide✅</h3><br><br>
+	  <hr><br>
+      <h4>🎵 Music Icon Guide</h4>
+      <p>
+        Tap once 👉🏻 Next Song<br>
+        Double Tap 👉🏻 Previous Song<br>
+        Hold 2s 👉🏻 Pause/Resume<br>
+        Enjoy the vibe 💖😉
+      </p><br>
+	  <hr><br>
+	   <h4>[ ]Square Box Guide</h4>
+      <p>
+        Tap once 👉🏻  Full-screen<br>
+        Tap Second  time 👉🏻  Normal-screen<br>
+        
+      </p><br><hr><br>
+	  <h2>👇🏻👇🏻</h2>
+      <button onclick="closePopup()">OK, Got it!</button>
+    </div>
+  </div>
+
+  <!-- 4) Music Icon -->
+  <svg id="musicIcon" xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24" style="fill: transparent; stroke: #000;">
+    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+  </svg>
+
+  <!-- 5) Audio Element -->
+  <audio id="audioPlayer" muted playsinline webkit-playsinline preload="auto" style="display:none;">
+    <source src="./ujwal2.mp3" type="audio/mp3"/>
+  </audio>
+
+  <!-- 6) Script -->
+  <script>
+    const originalBg = getComputedStyle(document.body).background;
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("page-loader").style.display = "none";
+        document.getElementById("overlay").style.display    = "block";
+      document.getElementById("musicPopup").style.display = "block";
+      document.getElementById("musicIcon").style.display  = "block";
+      document.body.style.background = "rgba(0,0,0,0.85)";
+      }, 2000);
+    });
+
+    function enterFullscreen() {
+      if (!document.fullscreenElement) {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) elem.requestFullscreen();
+      else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+      else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      else if (document.msExitFullscreen) document.msExitFullscreen();
+    }
+
+     
+    }
+
+    function closePopup() {
+      document.getElementById("musicPopup").style.display  = "none";
+      document.body.style.background                       = originalBg;
+      document.getElementById("mainContent").style.display = "block";
+
+      const audio = document.getElementById("audioPlayer");
+      const icon  = document.getElementById("musicIcon");
+      audio.muted  = false;
+      audio.volume = 1.0;
+      audio.play().then(() => {
+        icon.style.animationPlayState = 'running';
+      }).catch(err => console.warn("Play failed:", err));
+
+      initMusicIcon();
+    }
+
+    function initMusicIcon() {
+      const icon   = document.getElementById("musicIcon");
+      const audio  = document.getElementById("audioPlayer");
+      const songs  = ["./ujwal2.mp3","./feeling1.mp3","./feeling.mp3"];
+      let current   = 0, isPlaying = true, tapTimer = null, holdTimer = null, downTime = 0;
+
+      function ensurePlayOnce() {
+        if (!isPlaying) {
+          audio.muted = true;
+          audio.play().then(() => {
+            audio.muted = false;
+            isPlaying = true;
+            icon.style.animationPlayState = 'running';
+            document.documentElement.removeEventListener("pointerdown", ensurePlayOnce, true);
+          }).catch(err => console.warn("Autoplay blocked:", err));
+        }
+      }
+      document.documentElement.addEventListener("pointerdown", ensurePlayOnce, true);
+
+      audio.addEventListener("ended", () => { if (isPlaying) playNext(); });
+
+      function playNext() {
+        current = (current + 1) % songs.length;
+        audio.src = songs[current]; audio.load();
+        audio.play().then(() => { isPlaying = true; icon.style.animationPlayState = 'running'; })
+          .catch(err => console.warn("Next song failed:", err));
+      }
+      function playPrevious() {
+        current = (current - 1 + songs.length) % songs.length;
+        audio.src = songs[current]; audio.load();
+        audio.play().then(() => { isPlaying = true; icon.style.animationPlayState = 'running'; })
+          .catch(err => console.warn("Previous song failed:", err));
+      }
+
+      icon.addEventListener("pointerdown", e => {
+        e.stopPropagation(); downTime = Date.now();
+        holdTimer = setTimeout(() => {
+          if (audio.paused) audio.play().then(() => { isPlaying = true; icon.style.animationPlayState = 'running'; })
+                            .catch(err => console.warn("Resume failed:", err));
+          else { audio.pause(); isPlaying = false; icon.style.animationPlayState = 'paused'; }
+          holdTimer = null;
+        }, 1000);
+      });
+
+      icon.addEventListener("pointerup", e => {
+        e.stopPropagation();
+        if (holdTimer) {
+          clearTimeout(holdTimer); holdTimer = null;
+          if (tapTimer) {
+            clearTimeout(tapTimer); tapTimer = null;
+            playPrevious();
+          } else {
+            tapTimer = setTimeout(() => {
+              tapTimer = null;
+              if (audio.paused) audio.play().then(() => { isPlaying = true; icon.style.animationPlayState = 'running'; })
+                                 .catch(err => console.warn("Play failed:", err));
+              else playNext();
+            }, 300);
+          }
+        }
+      });
+    }
+  </script>
+
+<!-- 5) Main Content -->
+ <div id="mainContent">
+
+<div class="z active" style=" background: radial-gradient(ellipse at bottom, #0d1a26, #00000061);
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+   
+    align-items: center;
+    justify-content: center;">
+  <div class="ab">
+    <div class="greetings">
+      <span>H</span><span>A</span><span>P</span><span>P</span><span>Y</span>
+    </div>
+    <div class="greetings">
+      <span>B</span><span>I</span><span>R</span><span>T</span><span>H</span><span>D</span><span>A</span><span>Y</span>
+    </div>
+    <div class="greetings">
+      <span>G</span><span>U</span><span>R</span><span>P</span><span>R</span><span>E</span><span>E</span><span>T</span>
+    </div>
+    <div class="description">
+      Some people shine without trying... you're one of them. ✨
+    </div>
+    <div class="shayari">
+      "Tere jaisa dost na koi milta, is duniya mein... 🌍<br>Tu dil ka armaan hai, ek pyara insaan hai... 💖"
+    </div>
+
+  <div style="position: relative; display: inline-block;     margin-right: 65%;
+    margin-left: 35%;">
+  <!-- Upar wala button (dikhai dene wala) -->
+  <button
+    id="startBtn"
+    onclick="goTo('a');"
+    style="position: absolute; top: 0; left: 0; z-index: 2;"
+  >
+    Open
+  </button>
+
+  <!-- Neeche chhupa hua button (extra backup, optional) -->
+  <button
+    onclick="goTo('a');"
+    style="position: absolute; top: 0; left: 0; z-index: 1;"
+  >
+    Start
+  </button>
+</div>
+
+ 
+  </div>
+</div>
+<div class="a" style="background: #111;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;">
+	  <div class="ss">
+ <div id="headerContainer"></div>
+  <div id="paragraphContainer"></div>
+  <div id="imageContainer">
+    
+  </div>
+  <div id="buttonsContainer">
+    <button onclick="goTo('z')">Back</button>
+  <button onclick="goTo('b')">Next</button>
+  </div>
+</div>
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const headerContainer = document.getElementById('headerContainer');
+    const paragraphContainer = document.getElementById('paragraphContainer');
+    const imageContainer = document.getElementById('imageContainer');
+    const buttonsContainer = document.getElementById('buttonsContainer');
+    const headerMessage = "From my heart ";
+    const paragraphMessage = "I wish from waheguru that they bless you freedom for doing that you want to do in your life to enjoy every moment 🤗🤗. Enjoy your special day and always shine like a sun. bright and help others. I will always support you and will be there whenever you need 😅. BY JASPREET";
+
+    function typeText(text, element, speed, callback) {
+      element.style.visibility = 'visible';
+      let i = 0;
+      const span = document.createElement('span');
+      const cursor = document.createElement('span');
+      cursor.className = 'heart-cursor';
+      cursor.innerText = '❤️';
+      element.appendChild(span);
+      element.appendChild(cursor);
+
+      function typeChar() {
+        if (i < text.length) {
+          span.textContent += text[i++];
+          setTimeout(typeChar, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      typeChar();
+    }
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      typeText(headerMessage, headerContainer, 100, () => {
+        typeText(paragraphMessage, paragraphContainer, 80, () => {
+          imageContainer.classList.add('visible');
+          setTimeout(() => {
+            buttonsContainer.classList.add('visible');
+          }, 600);
+        });
+      });
+    });
+  </script>
+</div>
+
+<div class="b">
+<div id="colorful-heart-zone"></div>
+  <div id="wrapper">
+    <div class="flag__birthday">
+        <img src="./a.png" alt="" width="350" class="flag__left">
+        <img src="./a.png" alt="" width="350" class="flag__right">
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="title">
+                <h1 class="happy">
+                    <span style="--t: 4s;">H</span>
+                    <span style="--t: 4.2s;">a</span>
+                    <span style="--t: 4.4s;">p</span>
+                    <span style="--t: 4.6s;">p</span>
+                    <span style="--t: 4.8s;">y</span>
+                </h1>
+                <h1 class="birthday">
+                    <span style="--t: 5s;">B</span>
+                    <span style="--t: 5.2s;">i</span>
+                    <span style="--t: 5.4s;">r</span>
+                    <span style="--t: 5.6s;">t</span>
+                    <span style="--t: 5.8s;">h</span>
+                    <span style="--t: 6s;">d</span>
+                    <span style="--t: 6.2s;">a</span>
+                    <span style="--t: 6.4s;">y</span>
+                </h1>
+                <div class="hat">
+                    <img src="./hat.png" alt="" width="130">
+                </div>
+            </div>
+            <div class="date__of__birth">
+                <span></span>
+            </div>
+            <div class="btn">
+                <button class="no-animate" id="btn__letter">
+                    Click here cutiee
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="box__account">
+                <div class="image">
+                    <img src="./r5.png" alt="">
+                </div>
+                <div class="name">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Gurpreet</span>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="balloon_one">
+                    <img width="100px" src="./balloon1.png" alt="">
+                </div>
+                <div class="balloon_two">
+                    <img width="100px" src="./balloon2.png" alt="">
+                </div>
+            </div>
+            <div class="cricle">
+                <div class="text__cricle">
+                    <span style="--i: 1;">h</span>
+                    <span style="--i: 2;">a</span>
+                    <span style="--i: 3;">p</span>
+                    <span style="--i: 4;">p</span>
+                    <span style="--i: 5;">y</span>
+                    <span style="--i: 6;">-</span>
+                    <span style="--i: 7;">b</span>
+                    <span style="--i: 8;">i</span>
+                    <span style="--i: 9;">r</span>
+                    <span style="--i: 10;">t</span>
+                    <span style="--i: 11;">h</span>
+                    <span style="--i: 12;">d</span>
+                    <span style="--i: 13;">a</span>
+                    <span style="--i: 14;">y</span>
+                    <span style="--i: 15;">-</span>
+                </div>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+    </div>
+    <div class="decorate_star star1" style="--t: 15s;"></div>
+    <div class="decorate_star star2" style="--t: 15.2s;"></div>
+    <div class="decorate_star star3" style="--t: 15.4s;"></div>
+    <div class="decorate_star star4" style="--t: 15.6s;"></div>
+    <div class="decorate_star star5" style="--t: 15.8s;"></div>
+    <div class="decorate_flower--one" style="--t: 15s;">
+        <img width="20" src="./decorate_flower.png" alt="">
+    </div>
+    <div class="decorate_flower--two" style="--t: 15.3s;">
+        <img width="20" src="./decorate_flower.png" alt="">
+    </div>
+    <div class="decorate_flower--three" style="--t: 15.6s;">
+        <img width="20" src="./decorate_flower.png" alt="">
+    </div>
+    <div class="decorate_bottom">
+        <img src="./decorate.png" alt="" width="100">
+    </div>
+    <div class="smiley__icon">
+        <img src="./smiley_icon.png" alt="" width="100">
+    </div>
+
+    
+
+    <div class="box__letter">
+        <div class="letter__border">
+		 
+            <div class="letter">
+                <div class="title__letter">
+                </div>
+                <div class="content__letter">
+                    <div class="left">
+					
+                        <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt=""> 
+						<button onclick="goTo('a')">Back</button>
+                        <button onclick="goTo('c')">Next</button>
+                        <img class="heart heart_1" style="--t: 0.2s" width="20" src="./heart.png" alt="">
+                        <img class="heart heart_2" style="--t: 0.4s" width="20" src="./heart.png" alt="">
+                        <img class="heart heart_3" style="--t: 0.6s" width="20" src="./heart.png" alt="">
+                        <img class="heart heart_4" style="--t: 0.8s" width="20" src="./heart.png" alt="">
+                    </div>
+                    <div class="right">
+<button class="close-btn" data-no-animate id="close__letter">×</button>
+                        <div class="text__letter">
+						
+                             <p></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div id="copy">
+     
+  </div>
+ 
+</div>
+<script>
+    let datetxt = "11 May 2007";
+    let datatxtletter = "My dear friend, You're truly special. Even if I’m not there today, my smile and prayers are with you. Thank you for being a part of my life — it means more than words. Wishing you joy, peace, and all the love you deserve. Happy Birthday, lovely. Miss me a little today. 💌💕😌"
+ ;
+    let titleLetter = "To you";
+    let charArrDate = datetxt.split('');
+    let charArrDateLetter = datatxtletter.split('');
+    let charArrTitle = titleLetter.split('');
+    let currentIndex = 0;
+    let currentIndexLetter = 0;
+    let currentIndexTitle = 0;
+    let date__of__birth = document.querySelector(".date__of__birth span");
+    let text__letter = document.querySelector(".text__letter p");
+    setTimeout(function(){
+        timeDatetxt = setInterval(function(){
+            if(currentIndex < charArrDate.length){
+                date__of__birth.textContent += charArrDate[currentIndex];
+                currentIndex++;
+            }
+            else{
+                let i = document.createElement("i");
+                i.className = "fa-solid fa-star"
+                document.querySelector(".date__of__birth").prepend(i)
+                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true))
+                clearInterval(timeDatetxt)
+            }
+        },100)
+    },12000)
+
+    var intervalContent;
+    var intervalTitle;
+    $("#btn__letter").on("click", function(){
+        $(".box__letter").slideDown()
+        setTimeout(function(){
+            $(".letter__border").slideDown();
+        },1000)
+        setTimeout(function(){
+            intervalTitle = setInterval(function(){
+                if(currentIndexTitle < charArrTitle.length){
+                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
+                    let i = document.createElement("i");
+                    i.className = "fa-solid fa-heart"
+                    document.querySelector(".title__letter").appendChild(i)
+                    currentIndexTitle++;
+                }
+                else{
+                    clearInterval(intervalTitle)
+                }
+            },100)
+        },2000)
+		document.getElementById('close__letter')
+  .addEventListener('click', () => {
+    document.querySelector('.box__letter').style.display = 'none';
+});
+        setTimeout(function(){
+            document.querySelector("#heart__letter").classList.add("animationOp");
+            document.querySelector(".love__img").classList.add("animationOp");
+            document.querySelector("#mewmew").classList.add("animationOp");
+        },2800)
+        setTimeout(function(){
+            document.querySelectorAll(".heart").forEach((item)=>{
+                item.classList.add("animation")
+            })
+        },3500)
+        setTimeout(function(){
+            intervalContent = setInterval(function(){
+                if(currentIndexLetter < charArrDateLetter.length){
+                    text__letter.textContent += charArrDateLetter[currentIndexLetter];
+                    currentIndexLetter++;
+                }
+                else{
+                    clearInterval(intervalContent)
+                }
+            },60)
+        },6000)
+    })
+    $(".close").on("click", function(){
+        clearInterval(intervalContent)
+        document.querySelector(".title__letter").textContent = "";
+        text__letter.textContent = "";
+        currentIndexLetter = 0
+        currentIndexTitle = 0
+        document.querySelector("#heart__letter").classList.remove("animationOp");
+        document.querySelector(".love__img").classList.remove("animationOp");
+        document.querySelector("#mewmew").classList.remove("animationOp");
+        document.querySelectorAll(".heart").forEach((item)=>{
+                item.classList.remove("animation")
+            })
+        $(".box__letter").slideUp();
+        $(".letter__border").slideUp();
+    })
+</script>
+<script>
+function getRandomColor() {
+  const colors = ["red", "pink", "blue", "green", "purple", "orange", "yellow", "aqua", "lime", "fuchsia", "gray", "black", "white", "silver","maroon", "olive", "navy", "teal", "brown", "gold", "indigo", "violet", "beige", "coral"];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function dropColorfulHeart() {
+  const heart = document.createElement("div");
+  const heartColor = getRandomColor(); // Get random color
+  
+  heart.innerHTML = `
+    <svg class='colorful-line spinning' style='opacity:.5;z-index:100' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+      <g transform='translate(2.550170, 3.550158)'>
+        <path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path>
+        <path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path>
+      </g>
+    </svg>`;
+  
+  heart.className = "colorful-heart";
+  heart.style.left = (Math.random() * 95) + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  heart.querySelector("svg").style.stroke = heartColor; // Apply random color
+  
+  const colorfulZone = document.querySelector("#colorful-heart-zone");
+  if (colorfulZone) colorfulZone.appendChild(heart);
+}
+
+setInterval(() => {
+  dropColorfulHeart();
+  const allHearts = document.querySelectorAll("#colorful-heart-zone .colorful-heart");
+  if (allHearts.length > 100) {
+    allHearts[0].remove();
+  }
+}, 400);
+</script>
+ 
+<div class="c" style="background: linear-gradient(to bottom, #ffe1e1, #ff217de0), url(./r.jpg); 
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;">
+
+  <div id="bodyblur">
+    <!-- Wallpaper -->
+    <img src="" id="wallpaper" />
+  </div>
+
+  <div id="Content">
+    <div id="kadoIn">
+      <!-- Gift Button -->
+      <img src="./GiftBox.png" alt="Open Gift Button" />
+    </div>
+    <p id="ket">
+      <span style="font-style: italic; color: rgb(0,0,0); margin-top: 3px !important;">Open the gift, cutieeee</span>
+    </p>
+
+    <div class="kumpulanstiker" style="margin-top: 95px;">
+      <!-- Stickers for Content -->
+      <img src="https://media.tenor.com/4Ijycn6xFzUAAAAj/mochi-blue-roses.gif" id="fotostiker" />
+      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2" />
+      <img src="https://media.tenor.com/snFoLI-S9CQAAAAj/milk-and-mocha.gif" id="fotostiker3" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker4" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker5" />
+    </div>
+
+    <p id="halo" class="halo"></p>
+
+    <div>
+      <blockquote id="bq" data-text="💞">
+        <p id="kalimat">
+          Happy Birthday, gorgeous! Today is all about celebrating you.
+        </p>
+        <p id="pesan1">Tap here for your birthday surprise! 🎉</p>
+        <div id="kolombaru">
+          <li id="lv1">🎂</li>
+          <li id="lv2">🎁</li>
+          <li id="lv3">🥳</li>
+          <li id="lv4">💖</li>
+        </div>
+        <p id="pesan2">You shine brighter every year! ✨</p>
+        <p id="pesan3">Do you know what makes today extra special?</p>
+        <p id="pesan4" class="sty2">It’s your birthday!</p>
+        <p id="pesan5" class="sty2">
+          Today, I wish you a year filled with laughter, love, and unforgettable moments.
+        </p>
+        <p id="pesan6" class="sty2">
+          Remember, you deserve all the happiness in the world. Celebrate big and enjoy every moment!
+        </p>
+        <p id="opsL">Tap to continue the celebration!</p>
+      </blockquote>
+    </div>
+
+    <!-- Send Message Button -->
+    <div id="Tombol">
+      <a id="By"></a>
+      <button onclick="goTo('b')">Back</button>
+      <button onclick="goTo('d')">Next</button>
+    </div>
+
+    <!-- Rejected Message (if needed) -->
+    <div id="pesanditolak">
+      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
+      <p id="kataditolak">
+        Oops! You can’t skip this birthday magic.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const swalst = Swal.mixin({
+      timer: 2300,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      timerProgressBar: true,
+      imageHeight: 90,
+    });
+    
+    ftganti = 0;
+    fungsi = 0;
+    fungsiAwal = 0;
+    deffotostiker = fotostiker.src;
+    Content.style = "opacity:1;margin-top:16vh";
+    const swals = Swal.mixin({
+      allowOutsideClick: false,
+      cancelButtonColor: "#FF0040",
+      imageHeight: 80,
+    });
+
+    document.getElementById("kadoIn").onclick = function () {
+      if (fungsiAwal == 0) {
+        fungsiAwal = 1;
+        kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0";
+        wallpaper.style = "transform: scale(1.5);";
+        ket.style = "display:none";
+        setTimeout(initengahan, 300);
+        setTimeout(inipesan, 500);
+      }
+    };
+
+    async function inipesan() {
+      window.nama = "Madam Ji";
+      if (window.nama.length < 20) {
+        vketikhalo = "Happy Birthday, " + window.nama + "!";
+        mulainama();
+      } else {
+        await Swal.fire({
+          title: "Your name is lovely, but it seems a bit long.",
+          text: "Please enter a shorter name.",
+          icon: "warning",
+        });
+        inipesan();
+      }
+    }
+
+    var tanya = "How about we celebrate your birthday in style?";
+    var opstanya = "Your choice is:";
+    var tompositif = "Absolutely, let’s celebrate! 🎉";
+    var tomnegatif = "Maybe another time";
+
+    async function pertanyaan() {
+      var { isConfirmed: prtanya } = await swals.fire({
+        title: nama + ", " + tanya,
+        text: "" + opstanya,
+        imageUrl: "" + fotostiker5.src,
+        showCancelButton: true,
+        confirmButtonText: "" + tompositif,
+        cancelButtonText: "" + tomnegatif,
+      });
+      if (prtanya) {
+        pesanwhatsapp = "Yes " + nama + ", let the birthday magic begin!";
+        menuju();
+      } else {
+        pesanwhatsapp = nama + ", don't miss out on the birthday fun!";
+        await swalst.fire({
+          title: "" + kataditolak.innerHTML,
+          timer: 2000,
+          imageUrl: "" + stikerditolak.src,
+        });
+        menuju();
+      }
+    }
+  </script>
+</div>
+
+  <script src="ab.js"></script>
+
+</div>
+
+<div class="d" style=" background: #121212;
+  color: #eee;
+  
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  background: url('time.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    ">
+  <!-- Heading shows years -->
+  <h1 class="hh" ">Congratulations! You are <span id="yrsText">--</span> years old</h1>
+
+  <!-- Stats breakdown -->
+  <div class="stats">
+    <div class="boxed"><h2>Years</h2><p id="yrs">--</p></div>
+    <div class="boxed"><h2>Months</h2><p id="mos">--</p></div>
+    <div class="boxed"><h2>Days</h2><p id="dys">--</p></div>
+    <div class="boxed"><h2>Weeks</h2><p id="wks">--</p></div>
+  </div>
+
+  <!-- Live time, now including Years -->
+  <h2  class="hh">Total Live Time</h2>
+  <div class="live">
+    <div class="boxed"><h2>Hours</h2><p id="hhrs">--</p></div>
+    <div class="boxed"><h2>Minutes</h2><p id="mmin">--</p></div>
+    <div class="boxed"><h2>Seconds</h2><p id="ssec">--</p></div>
+  </div>
+<div class="nv">
+  <p style="margin-bottom: 15px;">
+    Aaj ka din kuch khaas hai, kyunki<br>
+    jiske bina zindagi adhuri thi... uska Birthday hai! 🎂💫<br>
+    Tum <span id="yrsMsg">--</span> saal ki ho gayi ho, par dil ab bhi utna hi cute hai! 🥺🌸
+  </p>
+  <i  style="color: #00ffdd;font-weight: 500;">
+  Janamdin tera aaye, zindagi muskuraye,<br>
+  Teri har ek ada pe chand bhi sharmaaye... 🌙<br>
+  Dua hai meri, har pal tu haste rehna,<br>
+  Teri khushi mein hi toh mera dil chain paaye.🎉💕
+</i>
+</div>
+
+  <script>
+    // Fixed birth date: 22 May 2007 local midnight
+    const birth = new Date(2007, 4, 11, 0, 0, 0);
+
+    function updateStats() {
+      const now = new Date();
+
+      // total months difference
+      let totalMonths = (now.getFullYear() - birth.getFullYear()) * 12
+                      + (now.getMonth() - birth.getMonth());
+      if (now.getDate() < birth.getDate()) totalMonths--;
+
+      const years  = Math.floor(totalMonths / 12);
+      const months = totalMonths % 12;
+
+      // days difference after adding years & months
+      const temp = new Date(birth);
+      temp.setFullYear(birth.getFullYear() + years);
+      temp.setMonth(birth.getMonth() + months);
+      const days = Math.floor((now - temp) / (1000*60*60*24));
+
+      const weeks = Math.floor((now - birth) / (1000*60*60*24*7));
+
+      // Update heading & stats
+      document.getElementById('yrsText').textContent = years;
+      document.getElementById('yrs').textContent     = years;
+      document.getElementById('mos').textContent     = months;
+      document.getElementById('dys').textContent     = days;
+      document.getElementById('wks').textContent     = weeks;
+	  document.getElementById('yrsMsg').textContent = years;
+
+      // Also update liveYears boxdocument.getElementById('liveYrs').textContent = years;
+    }
+
+    function updateLive() {
+      const diff = Date.now() - birth.getTime();
+      const sec  = Math.floor(diff / 1000);
+      const min  = Math.floor(sec / 60);
+      const hr   = Math.floor(min / 60);
+
+      document.getElementById('hhrs').textContent = hr;
+      document.getElementById('mmin').textContent = min % 60;
+      document.getElementById('ssec').textContent = sec % 60;
+    }
+
+    // Initial render
+    updateStats();
+    updateLive();
+    // Refresh every second
+    setInterval(() => {
+      updateStats();
+      updateLive();
+    }, 1000);
+  </script>
+<div style="text-align: center;">
+  <button onclick="goTo('c')">Back</button>
+  <button onclick="goTo('e')">Next</button>
+</div>
+</div>
+<div class="e" style=" margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    position: relative;
+    justify-items: anchor-center;
+    overflow-x: hidden;
+    text-align: center;
+    align-content: center;">
+    <div class="laugh-emoji" id="laughEmoji">😂</div>
+<div class="laugh-emoji" id="heartEmoji">💖</div>
+  <div class="containerrr">
+    <h1 style="  font-size: 26px;
+      margin-bottom: 15px;
+      color: #4a4a4a;">💖 Memory Test 💖 </h1>
+    <div class="intro" id="introText">
+      Chalo Yarr, ek memory test khelte hain...<br>
+      Dekhte hai yaadein kitni perfect rakhti hai aap 😘
+    </div>
+    <div class="rules">
+      📝 <b>Rules:</b><br>
+      - Click on 2 cards to flip.<br>
+      - Match the same emoji pair ❤️=❤️<br>
+      - Match all to unlock buttons 😍
+    </div>
+    <button class="start-btntt" onclick="startGame()">Shuru Karein? 😏</button>
+
+    <div class="game-board" id="gameBoard"></div>
+
+    <div class="tt" id="endButtons">
+	<div id="romantic-heart-zone"></div>
+      <button onclick="goTo('d')">Back</button>
+  <button onclick="goTo('f')">Next</button>
+    </div>
+  </div>
+
+  <script>
+   const emojis = ["🫶", "❤️", "🥳", "💞", "💐", "😍", "🥰", "🩷"];
+let cards = [...emojis, ...emojis];
+const board = document.getElementById('gameBoard');
+const intro = document.getElementById('introText');
+const endButtons = document.getElementById('endButtons');
+const laughEmoji = document.getElementById('laughEmoji');
+const heartEmoji = document.getElementById('heartEmoji'); // NAYA emoji element
+
+let hasFlipped = false, lockBoard = false;
+let firstCard, secondCard, matchedPairs = 0;
+
+function startGame() {
+  document.querySelector('.start-btntt').style.display = 'none';
+  intro.style.display = 'none';
+  board.style.display = 'grid';
+  shuffle(cards);
+  board.innerHTML = '';
+  cards.forEach(value => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.dataset.emoji = value;
+    card.addEventListener('click', flipCard);
+    board.appendChild(card);
+  });
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function flipCard() {
+  if (lockBoard || this === firstCard) return;
+  this.classList.add('flipped');
+  this.textContent = this.dataset.emoji;
+
+  if (!hasFlipped) {
+    hasFlipped = true;
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+  checkMatch();
+}
+
+function checkMatch() {
+  const isMatch = firstCard.dataset.emoji === secondCard.dataset.emoji;
+  if (isMatch) {
+    disableCards();
+  } else {
+    showLaugh();
+    unflipCards();
+  }
+}
+
+function showLaugh() {
+  laughEmoji.classList.add('active');
+  setTimeout(() => {
+    laughEmoji.classList.remove('active');
+  }, 1000);
+}
+
+function showHeart() {
+  heartEmoji.classList.add('active');
+  setTimeout(() => {
+    heartEmoji.classList.remove('active');
+  }, 1000);
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+  matchedPairs++;
+  showHeart(); // ❤️ RIGHT MATCH EMOJI
+  resetBoard();
+  if (matchedPairs === emojis.length) {
+    setTimeout(() => {
+      board.insertAdjacentHTML("afterend", "<div style='margin-top:15px; font-weight:bold;'>Wahh Wahh! Memory bhi dosti jaisi deep hai 💕</div>");
+      endButtons.style.display = 'flex';
+    }, 600);
+  }
+}
+
+function unflipCards() {
+  lockBoard = true;
+  setTimeout(() => {
+    firstCard.classList.remove('flipped');
+    secondCard.classList.remove('flipped');
+    firstCard.textContent = '';
+    secondCard.textContent = '';
+    resetBoard();
+  }, 1000);
+}
+
+function resetBoard() {
+  [hasFlipped, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+function goTo(page) {
+  alert(`Navigating to ${page}.html`);
+  // window.location.href = page + '.html';
+}
+
+  </script>
+  <script>
+function dropRomanticHeart() {
+  const redHeart = document.createElement("div");
+  redHeart.innerHTML = `
+    <svg class='red-line twister' style='opacity:.5;z-index:100' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+      <g transform='translate(2.550170, 3.550158)'>
+        <path d='M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z'></path>
+        <path d='M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842'></path>
+      </g>
+    </svg>`;
+  redHeart.className = "romantic-heart";
+  redHeart.style.left = (Math.random() * 95) + "vw";
+  redHeart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+  const romanticZone = document.querySelector("#romantic-heart-zone");
+  if (romanticZone) romanticZone.appendChild(redHeart);
+}
+
+setInterval(() => {
+  dropRomanticHeart();
+  const allHearts = document.querySelectorAll("#romantic-heart-zone .romantic-heart");
+  if (allHearts.length > 100) {
+    allHearts[0].remove();
+  }
+}, 300);
+</script>
+</div>
+
+
+<div class="f" style=" background-image: linear-gradient(rgb(206 187 187 / 0%), rgb(255 0 129 / 35%)), url(bgrt1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;">
+  <div class="wr">
+        <div class="it"></div>
+        <div class="content">
+            <div class="te"><i class="fa-solid fa-heart"></i>To You!<i class="fa-solid fa-heart"></i></div>
+              <p class="tec" id="type-target"></p>
+            
+        </div>
+		 <button class="fg" onclick="goTo('e')" style="display:none;">Back</button>
+  <button class="fh" onclick="goTo('g')" style="display:none;">Next</button>
+    </div>
+
+  
+<script>
+function typeWriter() {
+    const text = `
+🎉 Suno... Janamdin Mubarak ho! 🎉
+💖 Suno... Janamdin Mubarak ho! 💖<br>
+🌟 Koi tum jaisa na ho,
+🌸 Bahot khubsurat ho tum, bahot khubsurat tum raho...<br>
+🚀 Har kamyabi par pahucho,
+🎯 Har manzil par pahucho...
+🌈 Jahan logo ko saalon lag jaaye pahuchne mein,
+🕊️ Tum jaldi wahan pahucho...<br>
+🤔 Main achha hoon ya bura hoon, nahi jaanta...
+❤️ Dil ki ek baat batani hai...
+💌 Dil tumhare alawa kisi ko khaas nahi maanta apna...<br>
+👫 Tum saath raho, tum khaas raho...
+🥳 Ek saal aur badh gayi hai umar tumhari,
+💑 Har badhti umar mein tum mere saath raho...<br>
+🎁 Koi khaas tohfa nahi hai jo main tumhe de paunga...
+🤝 Par wada hai, har mushkil mein yeh saath nibhaunga...<br>
+🌹 Ek aur saal tumhare kadmo mein mubarak ho...
+💫 Achha suno... Janamdin Mubarak ho! 💫
+`;
+
+    const element = document.getElementById('type-target');
+    element.innerHTML = ''; // clear if anything inside
+
+    let i = 0;
+    const span = document.createElement('span');
+    const cursor = document.createElement('span');
+    cursor.className = 'heart-cursor';
+    cursor.innerText = '❤️';
+    element.appendChild(span);
+    element.appendChild(cursor);
+
+    function _type() {
+        if (i < text.length) {
+            if (text[i] === '<') {
+                // handle full tag
+                const end = text.indexOf('>', i);
+                const tag = text.slice(i, end + 1);
+                span.innerHTML += tag;
+                i = end + 1;
+            } else {
+                // Handle regular text and spaces
+                span.innerHTML += text[i++];
+            }
+            setTimeout(_type, 80);
+        } else {
+            // typing complete
+            cursor.style.display = 'none';
+            document.querySelector('.fg').style.display = 'inline-block';
+            document.querySelector('.fh').style.display = 'inline-block';
+        }
+    }
+
+    _type();
+}
+
+// Start when .f is visible
+const fSection = document.querySelector('.f');
+let started = false;
+const mo = new MutationObserver((_, obs) => {
+    if (!started && getComputedStyle(fSection).display !== 'none') {
+        started = true;
+        typeWriter();
+        obs.disconnect();
+    }
+});
+mo.observe(fSection, { attributes: true, attributeFilter: ['style', 'class'] });
+</script>
+
+
+ 
+</div>
+
+<div class="g">
+  <div class="ghand">
+  <button style="z-index:1;" onclick="goTo('f')">Back</button>
+  <!-- Background -->
+  <div class="nig"></div>
+
+  <!-- Flower -->
+  <div class="flowers">
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+        <div class="flower__line__leaf flower__line__leaf--5"></div>
+        <div class="flower__line__leaf flower__line__leaf--6"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+
+      </div>
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:1.2s">
+      <div class="flower__g-long">
+        <div class="flower__g-long__top"></div>
+        <div class="flower__g-long__bottom"></div>
+      </div>
+    </div>
+
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--1">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="growing-grass">
+      <div class="flower__grass flower__grass--2">
+        <div class="flower__grass--top"></div>
+        <div class="flower__grass--bottom"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+        <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+        <div class="flower__grass__overlay"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.4s">
+      <div class="flower__g-right flower__g-right--1">
+        <div class="leaf"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-right flower__g-right--2">
+        <div class="leaf"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:2.8s">
+      <div class="flower__g-front">
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+          <div class="flower__g-front__leaf"></div>
+        </div>
+        <div class="flower__g-front__line"></div>
+      </div>
+    </div>
+
+    <div class="grow-ans" style="--d:3.2s">
+      <div class="flower__g-fr">
+        <div class="leaf"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+        <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--0">
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:2.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--1">
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.8s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--2">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.4s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--3">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--4">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--5">
+      <div class="grow-ans" style="--d:4s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--6">
+      <div class="grow-ans" style="--d:4.2s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.4s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.6s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:4.8s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+
+    <div class="long-g long-g--7">
+      <div class="grow-ans" style="--d:3s">
+        <div class="leaf leaf--0"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.2s">
+        <div class="leaf leaf--1"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.5s">
+        <div class="leaf leaf--2"></div>
+      </div>
+      <div class="grow-ans" style="--d:3.6s">
+        <div class="leaf leaf--3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h1 class="tle"><span id="tle"></span></h1>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js"></script>
+
+
+
+<!-- Import Javascript -->
+<script src="./flowers.js"></script>
+
+
+<script>
+function goTo(targetClass) {
+  document.querySelectorAll('.z, .a, .b, .c, .d, .e, .f, .g').forEach(function(el) {
+    el.classList.remove('active');
+  });
+
+  document.querySelector('.' + targetClass).classList.add('active');
+}
+</script>
+</div>
+</body>
+</html>
