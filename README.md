@@ -4,7 +4,7 @@
 
 Project Name: Ujwal
 
-Live URL: https://gurpreet.netlify.app
+Live URL: https://gurpreet1.netlify.app
 
 Technologies Used:
 
@@ -20,9 +20,9 @@ CryptoJS (for encryption)
 
 2. Live Code Link:
    
-GitHub: https://github.com/chillcoder4/ujwal
+GitHub: https://github.com/chillcoder4/Ujwal
 
-Netlify: https://gurpreet.netlify.app
+Netlify: https://gurpreet.netlify1.app
 
 3. Social Media Links:
 
