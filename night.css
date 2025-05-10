@@ -3,7 +3,7 @@
   --dark-color: #000;
 }
 
-.tle {
+.tlle {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -12,7 +12,7 @@
   left: 0;
   
   font-family: 'Courier New', Courier, monospace;
-  font-size: 70px;
+
   
   animation: colorChange 5s infinite ease-in-out;
 }
@@ -38,40 +38,13 @@
     text-shadow: 2px 2px 4px rgb(210 9 57 / 97%); /* Balanced soft black */
   }
 }
-.ttle {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  top: 0;
-  left: 0;
-  
-  font-family: 'Courier New', Courier, monospace;
+
+  .tle {
   font-size: 70px;
-  
-  animation: colorChangee 5s infinite ease-in-out;
 }
-@keyframes colorChangee {
-  0% {
-    color: #084bd0;
-    text-shadow: 2px 2px 4px rgb(255 255 255); /* Light whiteish shadow */
-  }
-  25% {
-    color: #d42b00;
-    text-shadow: 2px 2px 4px rgb(255 255 255); /* Soft dark shadow */
-  }
-  50% {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgb(1 40 246); /* Dark gray shadow for contrast */
-  }
-  75% {
-    color: #00ff46;
-    text-shadow: 2px 2px 4px rgb(238 17 213 / 96%); /* Slight black shadow */
-  }
-  100% {
-    color: #0beeeb;
-    text-shadow: 2px 2px 4px rgb(210 9 57 / 97%); /* Balanced soft black */
-  }
+
+.ttle {
+    font-size: 40px;
 }
 .ghand {
   display: flex;
